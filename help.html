@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .text_a:visited,.text_a:focus,.text_a{
+                text-decoration: none;
+            }
+            .item{
+                margin-right: 120px;
+                float: left;
+                border: 1px solid #00626f;
+                background: #00acc397;
+                width: 200px;
+                border-radius: 10px;
+                padding-left: 30px;
+                padding-bottom: 10px;
+                padding-top: 2px;
+            }
+            h1,h2,h3,h4,h5,h6{
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            h1:hover{color: crimson;}
+            li{
+                list-style-type: decimal;
+            }
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            .spinning {
+                animation: spin 2s linear infinite;
+            }
+        </style>
+        <title>Справка о Windows помощнике</title>
+    </head>
+    <body>
+        <h1 style="color: rgb(0, 170, 255);" id="progect">Голосовой помощник "Нани"</h1>
+        <h3>Проект "Голосовой помощник Нани" представляет собой инновационное решение в области искусственного интеллекта и обработки естественного языка. Наша цель — создать голосового помощника, способного облегчить повседневные задачи пользователей, предоставляя доступ к информации, управления устройствами и выполнения различных команд с помощью естественного языка.</h3>
+        <div style="width: 100%; min-height: 250px; height: fit-content;">
+        <ul class="item">
+            <h2 style="color: rgb(0, 104, 104);">Содержание</h2>
+            <li><a href="#progect" class="text_a"><h3 style="color: rgb(29, 29, 29);">Описание проекта</h3></a></li>
+            <li><a href="#buttons" class="text_a"><h3 style="color: rgb(29, 29, 29);">Кнопки</h3></a></li>
+            <ul style="padding-left: 30px;">
+                <li><a href="#quit" class="text_a"><h3 style="color: rgb(29, 29, 29);">Выключить</h3></a></li>
+                <li><a href="#move" class="text_a"><h3 style="color: rgb(29, 29, 29);">Догонялки</h3></a></li>
+                <li><a href="#help" class="text_a"><h3 style="color: rgb(29, 29, 29);">Помощь</h3></a></li>
+                <li><a href="#back" class="text_a"><h3 style="color: rgb(29, 29, 29);">Назад</h3></a></li>
+            </ul>
+        </ul>
+        <img id="chebypela" src="res/right.png" width="250" height="250">
+        </div>
+        <h1 style="color: rgb(0, 170, 255);" id="buttons">Кнопки</h1>
+        <h3>Меню с кнопками можно открыть, нажав по персонажу. Появятся 4 надписи на черном фоне. О всех кнопках рассказано ниже.</h3>
+        <h1 style="color: rgb(0, 170, 255);" id="quit">Кнопка выключить</h1>
+        <h3>При нажатии просто закрывает программу.</h3>
+        <h1 style="color: rgb(0, 170, 255);" id="move">Кнопка догонялки</h1>
+        <h3>Включает/выключает режим "догонялки". При включенном режиме персонаж бегает за курсором</h3>  
+        <h1 style="color: rgb(0, 170, 255);" id="help">Кнопка помощь</h1>
+        <h3>Так вы сюда и попали)</h3>     
+        <h1 style="color: rgb(0, 170, 255);" id="back">Кнопка назад</h1>
+        <h3>Возвращает персонажа, убирая фон и кнопки</h3>  
+        <div style="height: 200px;"></div>
+        <h6 id="easter_egg" style="color: #ffffffff;">прив :)</h6>
+        <section id="sus"></section>
+        <img id="chebypela" style="display: none;" src="res/right.png" width="100" height="100">
+    </body>
+</html>
+
+<script>
+    let easter_egg = document.getElementById('easter_egg');
+    let chebupela = document.getElementById('chebypela');
+    
+    function click(e){
+        alert('Ты нашел пасхалку!');
+        chebupela.src='res/png.png'
+        chebupela.classList.add('spinning');
+    }
+    
+    easter_egg.addEventListener('click', click);
+</script>
