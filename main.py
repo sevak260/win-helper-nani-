@@ -2,7 +2,7 @@ import pygame
 import buttons
 import sys
 import os
-from ai import liten
+from get_words import liten
 import time
 import threading
 import mouse
@@ -28,7 +28,7 @@ nn_thread.start()
 
 pygame.init()
 
-scr=pygame.display.set_mode((90,100),flags=pygame.NOFRAME)
+scr=pygame.display.set_mode((400,100),flags=pygame.NOFRAME)
 
 hwnd = pygame.display.get_wm_info()["window"]
 win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(
@@ -92,7 +92,9 @@ while run:
             if keys[pygame.K_UP]:
                 pl.change_pos(pl.win.position[0],pl.win.position[1]-1)
 
-        pl.draw(message_queue)
+        answer=pl.draw(message_queue)
+        if answer:
+            print(answer)
 
         if move:
             #x
